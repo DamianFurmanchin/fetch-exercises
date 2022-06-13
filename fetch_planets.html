@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2022.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 14.0px Times; color: #de6961; -webkit-text-stroke: #de6961; background-color: #28394c}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 14.0px Times; color: #fc80c3; -webkit-text-stroke: #fc80c3; background-color: #28394c}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 14.0px Times; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #28394c}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 14.0px Menlo; color: #52b67a; -webkit-text-stroke: #52b67a; background-color: #28394c}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 14.0px Menlo; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #28394c}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 20.0px; font: 14.0px Times; color: #52b67a; -webkit-text-stroke: #52b67a; background-color: #28394c}
+    span.s1 {font-kerning: none}
+    span.s2 {font-kerning: none; color: #ffffff; -webkit-text-stroke: 0px #ffffff}
+    span.s3 {font-kerning: none; color: #fc80c3; -webkit-text-stroke: 0px #fc80c3}
+    span.s4 {font-kerning: none; color: #52b67a; -webkit-text-stroke: 0px #52b67a}
+    span.s5 {font-kerning: none; color: #ec9632; -webkit-text-stroke: 0px #ec9632}
+    span.s6 {font-kerning: none; color: #d53f23; -webkit-text-stroke: 0px #d53f23}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p2"><span class="s2">&lt;</span><span class="s1">html</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">   </span>&lt;</span><span class="s3">head</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>&lt;</span><span class="s3">title</span><span class="s1">&gt;Fetch Planets&lt;/</span><span class="s3">title</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>&lt;</span><span class="s3">script</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">         </span>window.addEventListener(</span><span class="s4">"load"</span><span class="s1">, </span><span class="s5">function</span><span class="s1">(){</span></p>
+<p class="p4"><span class="s2">fetch(</span><span class="s1">"https://handlers.education.launchcode.org/static/planets.json"</span><span class="s2">).then(</span><span class="s5"><b>function</b></span><span class="s2">(response) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">   </span>response.json().then(</span><span class="s5"><b>function</b></span><span class="s1">(json) {</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5"><b>const</b></span><span class="s1"> destination = document.getElementById(</span><span class="s4">"destination"</span><span class="s1">);</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s5"><b>let</b></span><span class="s1"> index = </span><span class="s6"><b>0</b></span><span class="s1">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>destination.addEventListener(</span><span class="s4">"click"</span><span class="s1">, </span><span class="s5"><b>function</b></span><span class="s1">(){</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">         </span>destination.innerHTML = </span><span class="s4">`</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">               </span>&lt;h3&gt;Planet ${</span><span class="s2">json[index].name</span><span class="s1">}&lt;/h3&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">               </span>&lt;img src=${</span><span class="s2">json[index].image</span><span class="s1">} height=250&gt;&lt;/img&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p4"><span class="s1"><span class="Apple-converted-space">         </span>`</span><span class="s2">;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">         </span>index = (index + </span><span class="s6"><b>1</b></span><span class="s1">) % json.length;</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p5"><span class="s1"><span class="Apple-converted-space">   </span>});</span></p>
+<p class="p5"><span class="s1">});</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/</span><span class="s3">script</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">   </span>&lt;/</span><span class="s3">head</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">   </span>&lt;</span><span class="s3">body</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>&lt;</span><span class="s3">h1</span><span class="s1">&gt;Destination&lt;/</span><span class="s3">h1</span><span class="s1">&gt;</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">      </span>&lt;</span><span class="s3">div</span><span class="s2"> </span><span class="s3">id</span><span class="s2">=</span><span class="s1">"destination"</span><span class="s2">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">         </span>&lt;</span><span class="s3">h3</span><span class="s1">&gt;Planet&lt;/</span><span class="s3">h3</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/</span><span class="s3">div</span><span class="s1">&gt;</span></p>
+<p class="p3"><span class="s1"><span class="Apple-converted-space">   </span>&lt;/</span><span class="s3">body</span><span class="s1">&gt;</span></p>
+<p class="p2"><span class="s2">&lt;/</span><span class="s1">html</span><span class="s2">&gt;</span></p>
+</body>
+</html>
